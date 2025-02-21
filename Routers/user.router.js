@@ -8,7 +8,7 @@ const {
 } = require("../Controllers/user.controller");
 var userRouter = express.Router();
 
-// Route Handler/ Controller
+// Route Handler/ Controller ///
 userRouter.get("/getUsers", getUsers);
 userRouter.post("/login", login);
 userRouter.post("/createUser", createUser);

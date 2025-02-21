@@ -53,7 +53,7 @@ async function login(req, res) {
     let { password } = req.body;
     let user = await User.findOne({ _id: req.query.id });
     if (!user) {
-      res.status(400).json({ Message: "User does not exists!!" });
+      res.status(400).json({ Message: "User does not!!" });
     }
     let pass_result = await bcrypt.compare(password, user.password);
     console.log(pass_result);
