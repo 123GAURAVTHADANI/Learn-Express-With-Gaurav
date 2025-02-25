@@ -10,14 +10,17 @@ const { userRouter } = require("./Routers/user.router");
 const { orderRouter } = require("./Routers/order.router");
 const { checkAge } = require("./Middlewares/custom.middleware");
 const { dbConfig } = require("./Configuration/db.config");
+var cookieParser = require("cookie-parser");
 
 dotenv.config();
 
 // in build middlewares
+app.use(cors());
 app.use(express.json());
 app.use(morgan("short"));
 app.use(express.urlencoded({ extended: true }));
 app.use(multer().array());
+app.use(cookieParser());
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "abc"));
